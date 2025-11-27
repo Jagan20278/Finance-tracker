@@ -29,7 +29,7 @@ function Dashboard({ token }) {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/transactions', config)
+    axios.get('https://finance-api-jagan.onrender.com/api/transactions', config)
       .then(res => setTransactions(res.data.data))
       .catch(err => toast.error("Failed to load data"));
   }, [token]);
@@ -41,7 +41,7 @@ function Dashboard({ token }) {
     const finalAmount = type === 'expense' ? -Math.abs(amount) : Math.abs(amount);
     const newTrans = { text, amount: finalAmount, category };
     
-    axios.post('http://localhost:5000/api/transactions', newTrans, config)
+    axios.post('https://finance-api-jagan.onrender.com/api/transactions', newTrans, config)
       .then(res => {
         setTransactions([...transactions, res.data.data]);
         setText('');
@@ -52,7 +52,7 @@ function Dashboard({ token }) {
   };
 
   const deleteTransaction = (id) => {
-    axios.delete(`http://localhost:5000/api/transactions/${id}`, config)
+    axios.delete(`https://finance-api-jagan.onrender.com/api/transactions/${id}`, config)
       .then(() => {
         setTransactions(transactions.filter(t => t._id !== id));
         toast.info("Transaction deleted");

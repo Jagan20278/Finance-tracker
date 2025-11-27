@@ -15,7 +15,7 @@ function Login({ setToken }) {
     e.preventDefault();
     const endpoint = isRegister ? '/register' : '/login';
     try {
-      const res = await axios.post(`http://localhost:5000/api/auth${endpoint}`, { username, password });
+      const res = await axios.post(`https://finance-api-jagan.onrender.com/api/auth${endpoint}`, { username, password });
       
       if (!isRegister) {
          localStorage.setItem('token', res.data.token);
