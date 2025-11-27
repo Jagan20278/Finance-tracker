@@ -100,16 +100,36 @@ Prepared the application for submission.
 * Node.js installed locally.
 * MongoDB installed locally OR a MongoDB Atlas connection string.
 
-### 1. Backend Setup
+### 1. Clone the Repository
+```bash
+git clone <YOUR_REPO_URL>
+cd finance-flow-assessment
+```
+
+### 2. Backend Setup
 Navigate to the server directory and install dependencies.
 ```bash
 cd server
 npm install
-node index.js '''
+node index.js
+```
+*Server runs on Port 5000*
 
-### 1. Frontend Setup
-Navigate to the client directory and install dependencies.
+### 3. Frontend Setup
+Open a new terminal, navigate to the client directory, and install dependencies.
 ```bash
 cd client
 npm install
 npm run dev
+```
+*Client runs on Port 5173*
+
+---
+
+## 📝 Assumptions Made
+1.  **Currency:** The application assumes a single currency format ($).
+2.  **Environment:** The setup assumes a local development environment.
+3.  **Data Persistence:** The app relies on a running MongoDB instance.
+
+---
+**Developed by:** Kolli Jagan mohan rao
