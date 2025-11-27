@@ -88,6 +88,8 @@ Prepared the application for submission.
 *Real-time balance updates, visual analytics, and transaction history with animations.*
 ![Dashboard Interface](./dashboard.png)
 
+![Dashboard1 Interface](./dashboard1.png)
+
 ### 2. Secure Login Portal
 *Glass-effect authentication screen with validation and responsive design.*
 ![Login Screen](./login.png)
