@@ -105,7 +105,7 @@ Navigate to the server directory and install dependencies.
 ```bash
 cd server
 npm install
-node index.js
+node index.js '''
 
 ### 1. Frontend Setup
 Navigate to the client directory and install dependencies.
