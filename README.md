@@ -104,7 +104,7 @@ Prepared the application for submission.
 
 ### 1. Clone the Repository
 ```bash
-git clone <YOUR_REPO_URL>
+git clone https://github.com/Jagan20278/Finance-tracker.git
 cd finance-flow-assessment
 ```
 
