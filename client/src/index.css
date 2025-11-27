@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --glass: rgba(255, 255, 255, 0.95);
+  --glass-icon: rgba(255, 255, 255, 0.3);
+  --primary: #4f46e5;
+  --dark: #1e1b4b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --text: #374151;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Glassmorphism Card Style */
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.header {
+  text-align: center;
+  color: black;
+  margin-bottom: 40px;
+}
+
+.header h1 { font-size: 2.5rem; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.header p { opacity: 0.9; font-weight: 300; }
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* Balance Section */
+.balance-card {
+  text-align: center;
+  padding: 30px;
+}
+.balance-amount {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 10px 0;
+}
+.inc-exp-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+.stat-box h4 { margin: 0; font-size: 0.9rem; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; }
+.stat-box p { font-size: 1.5rem; font-weight: 600; margin: 5px 0; }
+.money.plus { color: var(--success); }
+.money.minus { color: var(--danger); }
+
+/* Form Styling */
+.form-header { margin-bottom: 20px; color: var(--dark); }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 0.9rem; color: #4b5563; }
+.custom-input {
+  width: 93%;
+  padding: 12px 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: #f9fafb;
+}
+.custom-input:focus { outline: none; border-color: var(--primary); background: white; }
+
+/* Radio Button Group */
+.type-selector {
+  display: flex;
+  background: #f3f4f6;
+  padding: 5px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.radio-option {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s;
+  color: #6b7280;
+}
+.radio-option.active.inc { background: white; color: var(--success); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.radio-option.active.exp { background: white; color: var(--danger); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.submit-btn:active { transform: scale(0.98); }
+
+/* Transaction List */
+.history-list { list-style: none; padding: 0; }
+.trans-item {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  border-left: 6px solid transparent;
+  transition: all 0.2s;
+}
+.trans-item:hover { transform: translateX(5px); }
+.trans-item.inc { border-left-color: var(--success); }
+.trans-item.exp { border-left-color: var(--danger); }
+
+.trans-info { display: flex; align-items: center; gap: 15px; }
+.icon-box {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+.trans-details h4 { margin: 0; font-weight: 600; color: var(--text); }
+.trans-details small { color: #9ca3af; }
+
+.delete-action {
+  background: none; border: none;
+  color: #ef4444; cursor: pointer;
+  opacity: 0.3; transition: opacity 0.2s; font-size: 1.2rem;
+}
+.trans-item:hover .delete-action { opacity: 1; }
+
+@media (max-width: 768px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .container { padding: 20px 10px; }
+}
